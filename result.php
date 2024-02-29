@@ -2,23 +2,14 @@
 
     $user_text = $_GET['usertext'];
 
-    $bad_word = $_GET['badword']
+    $bad_word = $_GET['badword'];
     
 
+    $fixed_text = str_replace($bad_word,'***',$user_text);
 
-
-
+    
 
 ?>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -42,27 +33,14 @@
                 <label class="form-label">
                     Text
                 </label>
+
                 
-                <textarea class="form-control"  rows="10">
-
-                    <?php
-
-                        echo $user_text
-
-                    ?>
-
-                </textarea>
+                <textarea class="form-control"  rows="10"><?php echo $user_text ?></textarea>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Bad Word</label>
-                <textarea name="" class="form-control" id="" cols="30" rows="3">
-                    <?php
-
-                        echo $bad_word
-
-                    ?>
-                </textarea>
+                <label class="form-label">Text Without Bad Word</label>
+                <textarea class="form-control" id="" rows="10"><?php echo $fixed_text ?></textarea>
             </div>
         </div>
     </div>
