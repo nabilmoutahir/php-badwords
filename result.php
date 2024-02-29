@@ -7,7 +7,9 @@
 
     $fixed_text = str_replace($bad_word,'***',$user_text);
 
-    
+    $text_length = strlen($user_text);
+
+    $textbad_length = strlen($fixed_text);
 
 ?>
 
@@ -26,22 +28,37 @@
 </head>
 <body>
 
-    <div class="row justify-content-center mt-5">
-        <div class="col-3">
+    <div class="row justify-content-center mt-2">
+        <div class="col-6 d-flex justify-content-between align-content-center">
 
-            <div class="mb-3">
+            <div class="mb-3 col-5">
+                <label class="form-label">
+                    Text Length
+                </label>
+
+                <textarea class="form-control"  rows="1"><?php echo $text_length ?></textarea>
+                
                 <label class="form-label">
                     Text
                 </label>
 
-                
                 <textarea class="form-control"  rows="10"><?php echo $user_text ?></textarea>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Text Without Bad Word</label>
+            <div class="mb-3 col-5">
+                <label class="form-label">
+                    Censored Text Length
+                </label>
+
+                <textarea class="form-control" id="" rows="1"><? echo $textbad_length ?></textarea>
+
+                <label class="form-label">
+                    Censored Text 
+                </label>
+
                 <textarea class="form-control" id="" rows="10"><?php echo $fixed_text ?></textarea>
             </div>
+
         </div>
     </div>
 
